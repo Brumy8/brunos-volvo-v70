@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Volvo V70 D5</title>
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#14181d; --card2:#101318; --text:#f4f6f8;
+      --muted:#9da5ae; --line:#272d34; --accent:#d7e0e8; --good:#91c7a0;
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:radial-gradient(circle at top,#1a2027 0,#0b0d10 38%);
+      color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",
+      "SF Pro Text",Inter,Arial,sans-serif;line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:520px;margin:auto;padding:0 16px 40px}
+    header{padding:calc(28px + env(safe-area-inset-top)) 4px 18px}
+    .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    h1{font-size:42px;line-height:1;margin:7px 0 7px;letter-spacing:-.045em}
+    .subtitle{color:var(--muted);font-size:16px}
+    .hero{
+      min-height:235px;border:1px solid var(--line);border-radius:24px;
+      background:linear-gradient(135deg,#20262d,#0f1216);
+      display:flex;align-items:flex-end;padding:20px;overflow:hidden;position:relative;
+      box-shadow:0 18px 45px rgba(0,0,0,.25);
+    }
+    .hero:after{
+      content:"V70";position:absolute;right:-10px;top:18px;font-weight:800;
+      font-size:92px;letter-spacing:-.08em;color:rgba(255,255,255,.035);
+    }
+    .hero .photo-note{position:relative;z-index:1;color:#cbd1d7;font-size:13px}
+    .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 18px}
+    .spec{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px 11px}
+    .spec b{display:block;font-size:15px}.spec span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+    .menu{display:grid;gap:10px;margin:10px 0 24px}
+    button,.button{
+      width:100%;border:1px solid var(--line);background:var(--card);color:var(--text);
+      border-radius:17px;padding:16px;text-align:left;font:inherit;cursor:pointer;
+      display:flex;align-items:center;gap:14px;transition:.15s transform,.15s background;
+    }
+    button:active,.button:active{transform:scale(.985);background:#1b2026}
+    .icon{width:38px;height:38px;border-radius:12px;background:#20262d;display:grid;place-items:center;font-size:19px;flex:0 0 auto}
+    .btntext b{display:block;font-size:15px}.btntext span{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+    .arrow{margin-left:auto;color:var(--muted);font-size:20px}
+    section{display:none;margin:0 0 20px;background:var(--card2);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+    section.active{display:block}
+    section h2{margin:0 0 14px;font-size:22px;letter-spacing:-.02em}
+    .back{width:auto;padding:9px 12px;margin-bottom:15px;font-size:13px;border-radius:12px;display:inline-flex}
+    .rows{display:grid;gap:0}
+    .row{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+    .row:last-child{border-bottom:0}.row span{color:var(--muted)}.row b{text-align:right}
+    .notice{padding:13px 14px;border-radius:14px;background:#181e23;color:#cbd1d7;font-size:13px;margin-top:13px}
+    .footer{text-align:center;color:#707881;font-size:11px;padding:10px 0 0}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button,.button{transition:none}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Private vehicle profile</div>
+    <h1>Volvo V70</h1>
+    <div class="subtitle">II · D5 · Automatik · 2006</div>
+  </header>
+
+  <div class="hero" aria-label="Platzhalter für ein Foto des Volvo V70">
+    <div class="photo-note">Hier kannst du später ein eigenes Foto deines V70 einsetzen.</div>
+  </div>
+
+  <div class="specs">
+    <div class="spec"><b>185 PS</b><span>136 kW</span></div>
+    <div class="spec"><b>2.4 D5</b><span>Diesel</span></div>
+    <div class="spec"><b>~197.000</b><span>km</span></div>
+  </div>
+
+  <div class="menu">
+    <a class="button" href="https://www.google.com/maps/search/?api=1&query=Volvo+Werkstatt" target="_blank" rel="noopener">
+      <div class="icon">🗺️</div><div class="btntext"><b>Navigation</b><span>Eine Werkstatt oder Adresse öffnen</span></div><div class="arrow">›</div>
+    </a>
+    <button onclick="show('car')"><div class="icon">🚗</div><div class="btntext"><b>Fahrzeug</b><span>Daten, Reifen & Ausstattung</span></div><div class="arrow">›</div></button>
+    <button onclick="show('service')"><div class="icon">🔧</div><div class="btntext"><b>Wartung</b><span>Service- und Reparaturhistorie</span></div><div class="arrow">›</div></button>
+    <button onclick="show('manual')"><div class="icon">📖</div><div class="btntext"><b>Handbuch & Dokumente</b><span>Wichtige Unterlagen</span></div><div class="arrow">›</div></button>
+    <button onclick="show('about')"><div class="icon">ℹ️</div><div class="btntext"><b>Über das Auto</b><span>Besonderheiten & Umbauten</span></div><div class="arrow">›</div></button>
+  </div>
+
+  <section id="car">
+    <button class="back" onclick="hideAll()">← Zurück</button>
+    <h2>Fahrzeug</h2>
+    <div class="rows">
+      <div class="row"><span>Modell</span><b>Volvo V70 II</b></div>
+      <div class="row"><span>Motor</span><b>2.4 D5</b></div>
+      <div class="row"><span>Leistung</span><b>185 PS / 136 kW</b></div>
+      <div class="row"><span>Baujahr</span><b>2006</b></div>
+      <div class="row"><span>Getriebe</span><b>Automatik</b></div>
+      <div class="row"><span>Laufleistung</span><b>ca. 197.000 km</b></div>
+      <div class="row"><span>Reifen</span><b>225/45 R17</b></div>
+      <div class="row"><span>Felgen</span><b>Keskin KT15 · 7×17 · ET48</b></div>
+    </div>
+  </section>
+
+  <section id="service">
+    <button class="back" onclick="hideAll()">← Zurück</button>
+    <h2>Wartung</h2>
+    <div class="rows">
+      <div class="row"><span>Letzte Aktualisierung</span><b>09/2026</b></div>
+      <div class="row"><span>Motoröl</span><b>—</b></div>
+      <div class="row"><span>Getriebe / ATF</span><b>Historie ergänzen</b></div>
+      <div class="row"><span>Bremsen</span><b>Historie ergänzen</b></div>
+      <div class="row"><span>HU</span><b>—</b></div>
+    </div>
+    <div class="notice">Die Einträge sind Platzhalter. Hier kannst du später deine echte Wartungs- und Reparaturhistorie pflegen.</div>
+  </section>
+
+  <section id="manual">
+    <button class="back" onclick="hideAll()">← Zurück</button>
+    <h2>Handbuch & Dokumente</h2>
+    <div class="menu">
+      <a class="button" href="#" onclick="alert('Hier die PDF-URL deines Handbuchs eintragen.');return false;">
+        <div class="icon">📕</div><div class="btntext"><b>Bedienungsanleitung</b><span>PDF-Link hier eintragen</span></div><div class="arrow">›</div>
+      </a>
+      <a class="button" href="#" onclick="alert('Hier kannst du später weitere Dokumente verlinken.');return false;">
+        <div class="icon">📄</div><div class="btntext"><b>Weitere Dokumente</b><span>Rechnungen, Datenblätter usw.</span></div><div class="arrow">›</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <button class="back" onclick="hideAll()">← Zurück</button>
+    <h2>Über den V70</h2>
+    <p style="color:#b8c0c8;margin-top:0">
+      Persönliches Fahrzeugprofil für einen Volvo V70 II D5.
+      Diese Seite ist für den NFC-Sticker im Fahrzeug gedacht.
+    </p>
+    <div class="rows">
+      <div class="row"><span>Motor</span><b>D5 · 2.4 Diesel</b></div>
+      <div class="row"><span>Leistung</span><b>185 PS</b></div>
+      <div class="row"><span>Getriebe</span><b>Automatik</b></div>
+      <div class="row"><span>Farbe</span><b>Dunkelblau</b></div>
+    </div>
+  </section>
+
+  <div class="footer">V70 NFC · private vehicle page</div>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+function hideAll(){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
