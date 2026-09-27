@@ -27,17 +27,21 @@
     .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
     h1{font-size:42px;line-height:1;margin:7px 0 7px;letter-spacing:-.045em}
     .subtitle{color:var(--muted);font-size:16px}
-    .hero{
-      min-height:235px;border:1px solid var(--line);border-radius:24px;
-      background:linear-gradient(135deg,#20262d,#0f1216);
-      display:flex;align-items:flex-end;padding:20px;overflow:hidden;position:relative;
+    .hero-gallery{
+      display:grid;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    
+    .hero-gallery img{
+      width:100%;
+      height:235px;
+      object-fit:cover;
+      border-radius:24px;
+      border:1px solid var(--line);
       box-shadow:0 18px 45px rgba(0,0,0,.25);
     }
-    .hero:after{
-      content:"V70";position:absolute;right:-10px;top:18px;font-weight:800;
-      font-size:92px;letter-spacing:-.08em;color:rgba(255,255,255,.035);
-    }
-    .hero .photo-note{position:relative;z-index:1;color:#cbd1d7;font-size:13px}
+    
     .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 18px}
     .spec{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px 11px}
     .spec b{display:block;font-size:15px}.spec span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
@@ -71,9 +75,11 @@
     <div class="subtitle">II · D5 · Automatik · 2006</div>
   </header>
 
-  <div class="hero" aria-label="Platzhalter für ein Foto des Volvo V70">
-    <div class="photo-note">Hier kannst du später ein eigenes Foto deines V70 einsetzen.</div>
-  </div>
+  <div class="hero-gallery">
+  <img src="images/IMG_4388.jpeg" alt="Volvo V70 – Bild 1">
+  <img src="images/IMG_4399.jpeg" alt="Volvo V70 – Bild 2">
+  <img src="images/IMG_4400.jpeg" alt="Volvo V70 – Bild 3">
+</div>
 
   <div class="specs">
     <div class="spec"><b>185 PS</b><span>136 kW</span></div>
